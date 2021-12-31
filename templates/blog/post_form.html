@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>글쓰기 폼</title>
+    <link rel="stylesheet" href="{% static 'blog/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+</head>
+<body>
+    <nav>
+        <a href ="{% url 'blog:index' %}">블로그홈 | </a>
+        <a href ="{% url 'blog:post_create' %}">글쓰기 | </a>
+    </nav>
+    <section>
+        <h2 class="my-3 border-bottom pb-2">포스트 등록</h2>
+        <div class ="post_create">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                    <!--  오류 표시 Start   -->
+                {% include 'form_errors.html' %}
+                    <!-- 오류 표시 End-->
+
+                <div class="form-group">
+                    <label for="title"><strong>제목</strong></label>
+                    <input type ="text" class="form-control" style="width:700px; height: 50px; margin-bottom: 10px;" id="title" name="title"
+                           value ="{{ form.title.value|default_if_none:'' }}">
+                </div>
+                <div class="form-group">
+                    <label for="content"><strong>내용</strong></label>
+                    <textarea class="form-control my-3" style="width: 700px; height: 300px; margin-bottom: 10px;" id ="content" name="content"
+                              rows="10">{{ form.content.value|default_if_none:'' }}</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="content" style="margin-bottom: 10px;"><strong>사진 첨부</strong></label>
+                    <BR>
+                    <input type ="file" id="photo" name="photo">
+                </div>
+                <button type="submit" class="btn btn-secondary"> 저장하기 </button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

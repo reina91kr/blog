@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>글쓰기 폼</title>
+    <link rel="stylesheet" href="{% static 'blog/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+</head>
+<body>
+    <nav>
+        <a href ="{% url 'blog:index' %}">블로그홈 | </a>
+        <a href ="#">글목록 | </a>
+        <a href ="{% url 'blog:post_create' %}">글쓰기 | </a>
+    </nav>
+    <section>
+
+<!-- 상세 영역 Start -->
+        <div class ="container my-3">
+            <h2 class="border-bottom py-2">오늘은 12월 31일입니다.</h2>
+            <div class ="card my-3">
+                <div class="card-body">
+                    <div class="card-text" style="white-space:pre-line;">
+                        새로운 해를 맞이하여 기분이 매우 좋습니다. 그런데 이 장고는 정말 어려운 프로그램이네요.
+                        새로운 해를 맞이하여 기분이 매우 좋습니다. 그런데 이 장고는 정말 어려운 프로그램이네요.
+                        새로운 해를 맞이하여 기분이 매우 좋습니다. 그런데 이 장고는 정말 어려운 프로그램이네요.
+                        새로운 해를 맞이하여 기분이 매우 좋습니다. 그런데 이 장고는 정말 어려운 프로그램이네요.
+                        새로운 해를 맞이하여 기분이 매우 좋습니다. 그런데 이 장고는 정말 어려운 프로그램이네요.
+                        새로운 해를 맞이하여 기분이 매우 좋습니다. 그런데 이 장고는 정말 어려운 프로그램이네요.
+                        새로운 해를 맞이하여 기분이 매우 좋습니다. 그런데 이 장고는 정말 어려운 프로그램이네요.
+                        새로운 해를 맞이하여 기분이 매우 좋습니다. 그런데 이 장고는 정말 어려운 프로그램이네요.
+                        새로운 해를 맞이하여 기분이 매우 좋습니다. 그런데 이 장고는 정말 어려운 프로그램이네요.
+                        새로운 해를 맞이하여 기분이 매우 좋습니다. 그런데 이 장고는 정말 어려운 프로그램이네요.
+                    </div>
+                      <div class="badge badge-light p-2 text-left" style="margin-top: 15px;">
+                        작성일자 {{ post.sub_date }}</div>
+                      </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+</body>
+</html>

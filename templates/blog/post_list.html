@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>블로그 홈</title>
+</head>
+<body>
+    <nav>
+        <a href ="{% url 'blog:index' %}">블로그홈 | </a>
+        <a href ="#"> 글목록 | </a>
+        <a href ="{% url 'blog:post_create' %}">글쓰기 | </a>
+    </nav>
+
+    <section>
+        <h1>BLOG</h1>
+
+        {% if post_list %}
+            {% for post in post_list %}
+                <hr>
+                <h3>{{ post.title }}</h3>
+                <h5>{{ post.pub_date }}</h5>
+                <p style="white-space:pre-line">{{ post.content }}</p>
+                {% if post.photo %}
+                    <img src ="{{ post.photo.url }}">
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <p> 포스트가 없습니다. </p>
+        {% endif %}
+    </section>
+
+</body>
+</html>
